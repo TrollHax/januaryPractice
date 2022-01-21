@@ -91,12 +91,7 @@ void setup() {
   json.setString("program", program);
   json.setInt("summan av alla betyg", int(sum)); 
 
-  saveJSONObject(json, "data/new.json"); 
+  saveJSONObject(json, "data/Snittbetyg.json");
 
-  // Sketch saves the following to a file called "new.json":
-  // {
-  //   "id": 0,
-  //   "species": "Panthera leo",
-  //   "name": "Lion"
-  // }
+  exit();
 }
