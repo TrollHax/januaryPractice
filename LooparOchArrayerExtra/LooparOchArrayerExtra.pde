@@ -1,24 +1,36 @@
-//WIP
+float[] y, x;
 
-float[] f, x;
-float y, x_;
 
 void setup() {
   size(1280, 720);
   background(255);
-  strokeWeight(5);
+  strokeWeight(2);
 
-  f = new float[1000];
-  x = new float[100000];
+  x = new float[width];
 
-  for (float i = 0; i < x.length; i++) {
-    x_ = x_ + 0.1;
-    y = f(i);
-    
-    point(x_, y);
+  for (int i = 0; i < x.length; i++) {
+    x[i] = i;
+  }
+
+  y = f(x);
+
+  println(x);
+  println(y);
+
+  for (int i = 0; i < x.length; i++) {
+    point(x[i], height - y[i]);
   }
 }
 
-float f(float x) {
-  return height-(x*x);
+float func(float x) {
+  return 0.1 * x;
+}
+
+float[] f(float[] x) {
+  float[] y = new float[x.length];
+  for (int i = 0; i < x.length; i++) {
+    y[i] = func(x[i]);
+  }
+
+  return y;
 }
